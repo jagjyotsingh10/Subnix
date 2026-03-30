@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Subnix" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark_blue</item>
+        <item name="colorPrimaryContainer">@color/mid_blue</item>
+        <item name="colorSecondary">@color/active_green</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary_dark_blue</item>
+        <item name="android:windowBackground">@color/background_color</item>
+    </style>
+</resources>

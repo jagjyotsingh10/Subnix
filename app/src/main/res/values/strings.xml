@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Subnix</string>
+    <string name="tagline">Stop paying for things you forgot about</string>
+    <string name="total_subs">Total Subs</string>
+    <string name="forgotten">Forgotten</string>
+    <string name="monthly_cost">Monthly Cost</string>
+    <string name="add_subscription">Add Subscription</string>
+    <string name="app_name_label">App Name</string>
+    <string name="package_name_label">Package Name</string>
+    <string name="monthly_cost_label">Monthly Cost (CAD)</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ads_placeholder">Ads placeholder (Free Tier)</string>
+    <string name="pro_placeholder">Pro tier: unlock full usage history and advanced insights</string>
+    <string name="permission_required">Usage access is required to read app last-used stats.</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="status_active">ACTIVE</string>
+    <string name="status_idle">IDLE</string>
+    <string name="status_forgotten">FORGOTTEN</string>
+</resources>
