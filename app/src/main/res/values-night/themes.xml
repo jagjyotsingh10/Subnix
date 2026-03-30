@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.Subnix" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark_blue</item>
+        <item name="colorPrimaryContainer">@color/mid_blue</item>
+        <item name="colorSecondary">@color/active_green</item>
+        <item name="android:windowBackground">@color/background_color</item>
+    </style>
+</resources>
