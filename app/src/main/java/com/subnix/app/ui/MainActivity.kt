@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,6 +22,7 @@ import com.subnix.app.data.Subscription
 import com.subnix.app.util.DateUtils
 import com.subnix.app.util.NotificationHelper
 import com.subnix.app.util.PaywallManager
+import com.subnix.app.util.SubscriptionStatus
 import com.subnix.app.util.UsageStatsHelper
 import com.subnix.app.viewmodel.SubscriptionViewModel
 import com.subnix.app.worker.UsageStatsSyncScheduler
@@ -89,13 +91,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun renderSummary(subscriptions: List<Subscription>) {
         val total = subscriptions.size
-        val forgotten = subscriptions.count { DateUtils.computeStatus(it.lastUsed).name == "FORGOTTEN" && it.isActive }
+        val forgotten = subscriptions.count {
+            DateUtils.computeStatus(it.lastUsed) == SubscriptionStatus.FORGOTTEN && it.isActive
+        }
         val monthly = subscriptions.filter { it.isActive }.sumOf { it.monthlyCost }
 
         tvTotalSubs.text = total.toString()
         tvForgotten.text = forgotten.toString()
         tvMonthlyCost.text = String.format(Locale.CANADA, "CAD $%.2f", monthly)
-        tvPaywall.visibility = if (PaywallManager.shouldShowProPaywall(this)) TextView.VISIBLE else TextView.GONE
+        tvPaywall.visibility = if (PaywallManager.shouldShowProPaywall(this)) View.VISIBLE else View.GONE
     }
 
     private fun toggleActive(subscription: Subscription) {
